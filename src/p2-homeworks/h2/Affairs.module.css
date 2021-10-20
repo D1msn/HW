@@ -1,3 +1,86 @@
-.someClass {
+.wrapper{
+    width: 365px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3558940f;
+}
 
+.itemRed {
+    color: #c41e1e;
+}
+
+.itemYellow {
+    color: #da991c;
+}
+
+.itemGreen {
+    color: #269626;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.item:first-child {
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.list {
+    font-size: 16px;
+    width: 250px;
+}
+
+.button {
+    background-color: #0c0942;
+    color: #fff;
+    font-size: 23px;
+    line-height: 18px;
+    border-radius: 10px 0px 10px 0;
+    cursor: pointer;
+    position: absolute;
+    right: -50px;
+    border: none;
+    outline: none;
+    transition: background-color 0.5s ease;
+}
+
+.button:hover {
+    background-color: #1b118a;
+}
+.filterButton:hover{
+    background-color: #1b118a;
+}
+
+.filterButton:hover.red{
+    background-color: #c41e1e;
+}
+.filterButton:hover.yellow{
+    background-color: #da991c;
+}
+.filterButton:hover.green{
+    background-color: #269626;
+}
+
+.filterButton {
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+    background-color: #0c0942;
+    color: #fff;
+    font-size: 15px;
+    font-family: cursive;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease;
 }
