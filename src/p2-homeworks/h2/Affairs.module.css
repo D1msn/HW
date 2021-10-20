@@ -5,15 +5,15 @@
     background-color: #3558940f;
 }
 
-.itemRed {
+.highColor {
     color: #c41e1e;
 }
 
-.itemYellow {
+.middleColor {
     color: #da991c;
 }
 
-.itemGreen {
+.lowColor {
     color: #269626;
 }
 
