@@ -1,7 +1,74 @@
-.someClass {
-
+.wrapper{
+    padding: 20px 0;
+    display: flex;
 }
 
+.input{
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #0c0942;
+    border-right: none;
+}
+.input:focus{
+    outline: none;
+    border: 2px solid #1b118a;
+    border-right: none;
+}
+
+.input:focus.error{
+    border: 2px solid #c41e1e;
+    border-right: none;
+}
 .error {
-    border: 1px solid red;
+    border: 2px solid #c41e1e;
+    border-right: none;
 }
+
+.errorDiv{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: cursive;
+    color: #c41e1e;
+}
+.button {
+    border-radius: 0 10px 10px 0;
+    width: 60px;
+    height: 40px;
+    background-color: #0c0942;
+    color: #fff;
+    line-height: 0;
+    font-size: 19px;
+    font-family: cursive;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease;
+}
+.button:hover {
+    background-color: #1b118a;
+}
+
+.button:disabled{
+    background-color: #898989;
+}
+
+.usersTitle{
+    margin: 0;
+    font-size: 18px;
+}
+
+.usersList{
+    margin-left: 50px;
+}
+
+.usersItem{
+    font-size: 16px;
+}
+.usersItem span:not(:last-child){
+     margin-right: 5px;
+ }
+.usersItem span:first-child{
+    font-size: 12px;
+ }
