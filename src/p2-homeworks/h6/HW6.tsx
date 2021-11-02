@@ -24,6 +24,7 @@ function HW6() {
                     value={value}
                     onChangeText={setValue}
                     spanProps={{children: value ? undefined : 'enter text...'}}
+                    errorText={"Поле обязательное"}
                 />
             </div>
             <SuperButton onClick={save}>save</SuperButton>

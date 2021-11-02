@@ -1,12 +1,25 @@
 .superInput {
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid #0c0942;
+}
 
+.superInput:focus{
+    outline: none;
+    border: 2px solid #1b118a;
+}
+
+.superInput:focus.errorInput{
+    border: 2px solid #c41e1e;
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+    border: 2px solid #c41e1e;
 }
 
 .error {
+    position: absolute;
+    bottom: -30px;
     color: red;
 }

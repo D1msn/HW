@@ -1,13 +1,15 @@
 import React, {ChangeEvent, MouseEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
 import {UserType} from "./HW3";
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 export type AddEventType = MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLInputElement>
 
 type GreetingPropsType = {
 	name: string // need to fix any
-	setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
-	addUser: (e: AddEventType) => void// need to fix any
+	setNameCallback: (value: string) => void // need to fix any
+	addUser: () => void// need to fix any
 	error: boolean // need to fix any
 	errorText: string
 	totalUsers: number // need to fix any
@@ -18,14 +20,18 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
 	{name, setNameCallback, addUser, error, totalUsers, users, errorText} // деструктуризация пропсов
 ) => {
-	const inputClass = error ? [s.input, s.error] : [s.input] // need to fix with (?:)
+
 
 	return (
 		<div className={s.wrapper}>
-			<div>
-				<input value={name} onChange={setNameCallback} className={inputClass.join(' ')} onKeyPress={addUser} />
-				<button disabled={error} onClick={addUser}  className={s.button}>Add</button>
-				<div className={s.errorDiv}>{error && errorText}</div>
+			<div style={{display: "flex", alignItems: "center", position: "relative"}}>
+					<SuperInputText value={name}
+									onChangeText={setNameCallback} onEnter={addUser}
+									error={error}
+									errorText={errorText}
+									className={s.input}
+					/>
+				<SuperButton disabled={error} onClick={addUser} className={s.buttonBorder}>Add</SuperButton>
 			</div>
 
 			<div className={s.usersList}>

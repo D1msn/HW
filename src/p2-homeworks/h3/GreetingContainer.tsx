@@ -16,25 +16,24 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 	const [name, setName] = useState<string>('') // need to fix any
 	const [error, setError] = useState<boolean>(false) // need to fix any
 
-	const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-		const value = e.currentTarget.value;
+	const setNameCallback = (value: string) => { // need to fix any
 		if (value && value[0] !== " ") {
 			setError(false)
-			setName(value) // need to fix
+			setName(value)
 		} else {
 			setError(true)
 			setName("")
 		}
 	}
-	const addUser = (e: AddEventType) => {
-		if ((e as KeyboardEvent<HTMLInputElement>).key === "Enter" || e.type === "click") {
+	const addUser = () => {
+		if(name){
 			alert(`Hello ${name.trim()} !`)
 			addUserCallback(name.trim());
+			setName("")
 		}
+
+
 	}
-	// const addUserEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-	// 	if(e.key === "Enter") addUser()
-	// }
 
 	const totalUsers = users.length // need to fix
 
@@ -43,7 +42,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 			name={name}
 			setNameCallback={setNameCallback}
 			addUser={addUser}
-			// addUserEnter={addUserEnter}
 			error={error}
 			errorText="Поле не может быть пустым"
 			totalUsers={totalUsers}

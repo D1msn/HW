@@ -1,7 +1,28 @@
-.default {
-
+.button {
+    border-radius: 10px;
+    width: 100%;
+    background-color: #0c0942;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 19px;
+    font-family: cursive;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease;
 }
 
-.red {
-    background: red;
+.red{
+    background-color: #9f0b0b;
+}
+
+
+
+
+.button:hover {
+    background-color: #1b118a;
+}
+
+.button:disabled{
+    background-color: #898989;
 }

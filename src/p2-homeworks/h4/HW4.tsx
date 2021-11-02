@@ -29,7 +29,7 @@ function HW4() {
                     value={text}
                     onChangeText={setText}
                     onEnter={showAlert}
-                    error={error}
+                    errorText={error}
                     // spanClassName={s.testSpanError}
                 />
 
