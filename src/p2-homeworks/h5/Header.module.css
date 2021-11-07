@@ -1,0 +1,58 @@
+.menu {
+    z-index: 1000;
+    width: 40%;
+    height: 50px;
+    margin: 0;
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    background-color: #0c0942;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: 0.5s ease all;
+}
+
+.menu:before {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    bottom: -40px;
+    position: absolute;
+    content: "▼";
+    width: 100px;
+    height: 40px;
+    background-color: #0c0942;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.menu:hover {
+    top: 0%;
+}
+
+.menuLink {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease all;
+}
+
+.menuLink:hover {
+    color: #da991c
+}
+
+.menuLink[aria-current] {
+    color: #da991c;
+    text-decoration: underline;
+}
+
+.menuItem:not(:last-child) {
+    margin-right: 50px;
+}
+

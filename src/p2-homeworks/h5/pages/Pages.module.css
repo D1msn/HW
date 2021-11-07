@@ -1,0 +1,19 @@
+.pageNot{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 60px;
+    background-color: #0c0942;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+}
+
+.pageNot h1{
+    margin: 0 0 50px 0;
+    color: darkorange;
+    font-size: 150px;
+    line-height: 100%;
+}
