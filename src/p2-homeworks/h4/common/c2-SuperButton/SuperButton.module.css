@@ -25,4 +25,5 @@
 
 .button:disabled{
     background-color: #898989;
+    cursor: auto;
 }

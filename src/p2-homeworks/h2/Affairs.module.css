@@ -71,7 +71,7 @@
     background-color: #269626;
 }
 
-.filterButton {
+.wrapper .filterButton {
     border-radius: 5px;
     height: 30px;
     margin-left: 20px;
