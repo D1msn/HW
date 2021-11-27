@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import {restoreState, saveState} from './localStorage/localStorage'
@@ -10,25 +10,35 @@ function HW6() {
         saveState<string>('editable-span-value', value)
     }
     const restore = () => {
-        // setValue()
+        setValue("")
+        localStorage.removeItem('editable-span-value')
     }
 
+    useEffect(()=> {
+        setValue(restoreState<string>('editable-span-value', ''))
+    } , [])
+
     return (
-        <div>
+        <div style={{ maxWidth: 300 }}>
             <hr/>
             homeworks 6
 
             {/*should work (должно работать)*/}
-            <div>
+            <div style={{ marginTop: 10 }}>
                 <SuperEditableSpan
                     value={value}
                     onChangeText={setValue}
                     spanProps={{children: value ? undefined : 'enter text...'}}
                     errorText={"Поле обязательное"}
+                    onBlur={save}
+                    onEnter={save}
                 />
             </div>
-            <SuperButton onClick={save}>save</SuperButton>
-            <SuperButton onClick={restore}>restore</SuperButton>
+            <div className="hw-6__buttons">
+                <SuperButton onClick={save}>save</SuperButton>
+                <SuperButton onClick={restore}>restore</SuperButton>
+            </div>
+
 
             <hr/>
             {/*для личного творчества, могу проверить*/}

@@ -17,3 +17,19 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.d-flex{
+    display: flex;
+}
+
+.mr-5{
+    margin-right: 5px;
+}
+
+.hw-6__buttons{
+    margin-top: 10px;
+    display: flex;
+}
+.hw-6__buttons button:not(:last-child){
+    margin-right: 10px;
+}
