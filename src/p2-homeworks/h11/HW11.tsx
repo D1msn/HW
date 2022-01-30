@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
-import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import {Range} from "rc-slider";
+
+import 'rc-slider/assets/index.css';
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
-
+    const [value1, setValue1] = useState(20)
+    const [value2, setValue2] = useState(70)
     return (
         <div>
             <hr/>
@@ -15,15 +16,20 @@ function HW11() {
             <div>
                 <span>{value1}</span>
                 <SuperRange
-                    // сделать так чтоб value1 изменялось
+                    onChangeRange={setValue1}
+                    value={value1}
                 />
             </div>
 
             <div>
                 <span>{value1}</span>
-                <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
-                />
+                    <Range onChange={(values) => {
+                        setValue1(values[0])
+                        setValue2(values[1])
+                    }}
+                           value={[value1, value2]}
+                           allowCross={false}
+                    />
                 <span>{value2}</span>
             </div>
 
